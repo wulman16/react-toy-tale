@@ -16,7 +16,7 @@ The steps outlined below are from the Thinking in React tutorial that gives you 
 
 You can use invision or other visual tools (such as a whiteboard or pen & paper!) to build out the component hierarchy tree! You can also build a wireframe of you app that represents the different components in relation to each other on the page!
 
-[component hierarchy wireframe](https://reactjs.org/static/thinking-in-react-components-eb8bda25806a89ebdc838813bdfa3601-82965.png)
+![component hierarchy wireframe](https://reactjs.org/static/thinking-in-react-components-eb8bda25806a89ebdc838813bdfa3601-82965.png)
 
 ### STEP 2: Create Your Views (Static Version)
 
