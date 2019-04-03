@@ -1,25 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ToyHeader from './ToyHeader'
+import AddToyForm from './AddToyForm'
+import ToyCollection from './ToyCollection'
+import toyList from './resources/toys.js'
 
 class App extends Component {
+
+  constructor() {
+    super()
+    this.state ={
+      toys: toyList
+    }
+  }
+
+  addToy = (toy) => {
+    this.setState({
+      toys: [...this.state.toys, toy]
+    })
+  }
+
+  handleLike = (toyId) => {
+    const toy = this.state.toys.find(toy => toy.id === toyId)
+    const newLikes = toy.likes + 1
+    const toys = this.state.toys.map(t => {
+      return t.id === toyId ? {...t, likes: newLikes} : t
+    })
+    this.setState({toys})
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <ToyHeader />
+        <AddToyForm onAddToy={this.addToy} length={this.state.toys.length}/>
+        <ToyCollection toys={this.state.toys} onLike={this.handleLike}/>
       </div>
     );
   }

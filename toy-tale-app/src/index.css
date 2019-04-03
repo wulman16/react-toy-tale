@@ -60,7 +60,7 @@ button:hover {
   padding: 1rem;
   width: stretch;
   height: auto;
-  display: none;
+  display: block;
   background: #515DA2;
   opacity: .8;
 }
@@ -96,4 +96,8 @@ button:hover {
   font-size: 18px;
   font-family: monospace;
   margin: 3px;
+}
+
+#help {
+  text-align: center;
 }
